@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>brisTol</title>
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+		body{
+			margin: 0;
+			padding:0;
+		}
+		.clearfix:after,
+		.clearfix:before{
+			content: " ";
+			display: table;
+		}
+		.clearfix:after{
+			clear: both;
+		}
+		.nav1{
+			background-color: #818f9b;
+			height: 40px;
+
+		}
+		.nav1 .left{
+			float: left;
+			margin: 5px;
+		}
+		.nav1 .right{
+			float:right;
+		}
+		.nav1 ul{
+			margin: 5px;
+		}
+		.nav1 ul li{
+			list-style: none;
+			display: inline-block;
+			margin: 0px 10px;
+		}
+		.nav1 ul li a{
+			display: inline-block; 	
+		}
+		img{
+			width: 30px;
+			height: 30px;
+		}
+		.img{
+			/*float: left;*/
+			margin: 10px 5px;
+		}
+	</style>
+</head>
+<body>
+<nav class="nav1 clearfix">
+	<div class="left">
+		<a href="#"><img src="bed.png"></a>
+	</div>
+	<div class="right">
+		<ul>
+			<li><a href="#"><img src="sb.png"></a></li>
+			<li><a href="#"><img src="settings.png"></a></li>
+		</ul>
+	</div>
+</nav>
+<div class="img clearfix"><a href="#"><img src="more.png"></a></div>
+</body>
+</html>
