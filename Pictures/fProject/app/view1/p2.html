@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>anything</title>
+
+    <script src="../../script/angular.min.js"></script>
+    <script src="../../script/p6.js"></script>
+    <link rel="stylesheet" href="../../css/tableDesign.css">
+</head>
+<body ng-app="myModule">
+<div ng-controller="myController">
+    Order By:<select ng-model="onSelect">
+                <option value="name">name</option>
+                <option value="age">age</option>
+                <option value="gender">gender</option>
+                <option value="caste">caste</option>
+            </select>
+    <table>
+        <thead>
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>gender</th>
+            <th>caste</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="employee in employees">
+            <td> {{ employee.name }} </td>
+            <td> {{ employee.age }} </td>
+            <td> {{ employee.gender }} </td>
+            <td> {{ employee.caste }} </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

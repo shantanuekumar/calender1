@@ -1,0 +1,179 @@
+<html>
+<head>
+    <title>calender</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin:0;
+        }
+        ul {list-style-type: none;}
+        body {font-family: Verdana, sans-serif;}
+        .clearfix:after,
+        .clearfix:before{
+            content:" ";
+            display: table;
+        }
+        .clearfix:after{
+            clear: both;
+        }
+
+        /* Month header */
+        .month {
+            padding: 5px 20px;
+            width: 100%;
+            background: #1abc9c;
+            text-align: center;
+            display: inline-block;
+        }
+        ul ul{
+            display: inline-block;
+        }
+        /* Month list */
+        /*.month ul {*/
+            /*margin: 20px;*/
+            /*padding: 10px;*/
+        /*}*/
+        .design{
+            margin:0;
+            padding-top:15px;
+            width:20%;
+            float: left;
+        }
+
+        .month ul li {
+            color: white;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* Previous button inside month header */
+        .month .prev {
+            float: left;
+            padding-top: 10px;
+
+
+        }
+
+        /* Next button */
+        .month .next {
+            float: right;
+            padding-top: 10px;
+
+
+        }
+
+        /* Weekdays (Mon-Sun) */
+        .weekdays {
+            margin: 0;
+            padding: 10px 0;
+            width:70%;
+            /*background-color:#ddd;*/
+        }
+        .weekdays{
+            display: inline;
+            padding:0;
+        }
+        .date{
+            float: right;
+            width: 70%;
+            margin: 0;
+
+        }
+        .date ul{
+            display: block;
+        }
+        .weekdays li {
+            display: inline-block;
+            width: 12%;
+            color: #666;
+            text-align: center;
+
+        }
+
+        /* Days (1-31) */
+        .days {
+            padding: 10px 0;
+            /*background: #eee;*/
+            margin: 0;
+            width:70%;
+        }
+
+        .days li {
+            list-style-type: none;
+            display: inline-block;
+            width: 12%;
+            text-align: center;
+            margin-bottom: 5px;
+            font-size:10px;
+            color:#777;
+        }
+
+        /* Highlight the "current" day */
+        .days li .active {
+            padding: 5px;
+            background: #d39696;
+            color: white !important
+        }
+        a{
+            text-decoration: none;
+            color: #551A8B;
+        }
+        .days li a{
+            color: #FFFFFF;
+            padding: 4px;
+            border-radius: 5px;
+        }
+        .days li a:hover{
+            background-color: #98b56a;
+        }
+        .days li .active a:hover{
+            background-color:inherit;
+        }
+
+
+    </style>
+    <script src="../../script/angular.min.js"></script>
+    <script src="../../script/cal.js"></script>
+    <script src="../../script/jquery-3.2.1.min.js"></script>
+</head>
+<body ng-app="myModule">
+<div class="clearfix" ng-controller="changeMonth">
+<div class="month">
+       <ul class="design" >
+           <li class="prev" ><a href="" ng-click="decrease()">&#10094;</a></li>
+           <li class="next" ><a href="" ng-click="increase()">&#10095;</a></li>
+           <li ng-model="element">
+               {{element.month}}<br>
+               <span style="font-size:18px">{{element.year}}</span>
+           </li>
+       </ul>
+       <ul class="date"  ng-model = "ele">
+
+           <ul class="weekdays">
+               <li>Sun</li>
+               <li>Mon</li>
+               <li>Tue</li>
+               <li>Wed</li>
+               <li>Thu</li>
+               <li>Fri</li>
+               <li>Sat</li>
+           </ul>
+           <li class="prev" ng-click="decr()"><a href="">&#10094;</a></li>
+           <li class="next" style="margin-right: 270px;" ng-click="incr()"><a href="">&#10095;</a></li>
+           <ul class="days" >
+               <li><a href="">{{ele[0]}}</a></li>
+               <li><a href="">{{ele[1]}}</a></li>
+               <li><a href="">{{ele[2]}}</a></li>
+               <li><a href="">{{ele[3]}}</a></li>
+               <li><a href="">{{ele[4]}}</a></li>
+               <li><a href="">{{ele[5]}}</a></li>
+               <li><a href="">{{ele[6]}}</a></li>
+           </ul>
+       </ul>
+</div>
+</div>
+</body>
+</html>
